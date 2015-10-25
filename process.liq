@@ -6,11 +6,11 @@ limiter = ladspa.tap_limiter(limit_level = -0.5)
 
 # Single Band Compressor
 def multiband_band(process, from, to, attack, release, ratio, threshold, gain)
-	    from_filter = filter.iir.eq.high(frequency = from,)
-	    to_filter = filter.iir.eq.low(frequency = to,)
-	    process_filtered = to_filter(from_filter(process))
-		process_compressed = limiter(compressor(attack_time = attack, release_time = release, threshold_level = threshold, ratio=ratio, makeup_gain = gain, process_filtered))
-	    process_compressed
+	from_filter = filter.iir.eq.high(frequency = from,)
+	to_filter = filter.iir.eq.low(frequency = to,)
+	process_filtered = to_filter(from_filter(process))
+	process_compressed = limiter(compressor(attack_time = attack, release_time = release, threshold_level = threshold, ratio=ratio, makeup_gain = gain, process_filtered))
+	process_compressed
 end
 
 # Audio Input --------------------->
