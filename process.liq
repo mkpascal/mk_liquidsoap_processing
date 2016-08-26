@@ -20,7 +20,7 @@ process = input
 # Processing Blocks --------------------->
 
 # Gate
-process = ladspa.gate(radio, threshold = -60.0, attack = 0.15, hold = 1.0, decay = 200.0, range = -25.0)
+process = ladspa.gate(process, threshold = -60.0, attack = 0.15, hold = 1.0, decay = 200.0, range = -25.0)
 
 # Wideband AGC + Pre-Processing
 process = normalize(target = 0., window = 0.03, gain_min = -16., gain_max = 0., process)
