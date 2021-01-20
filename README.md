@@ -4,12 +4,18 @@ Liquidsoap is a great tool, yet the built-in audio processing is terrible. Based
 This processing chain is using ladspa plugins, make sure to compile/install them with liquidsoap. Feel free to submit issues/pull requests.
 
 Here is the list of plugins I'm using:
-* SC4
+
+#### [TAP Plugins](https://tomscii.sig7.se/tap-plugins/) (`tap-plugins`)
 * Tap Limiter
 * Tap Equalizer
 * Tap Deesser
-* Gate
+
+#### [Steve Harris Plugins](http://plugin.org.uk/ladspa-swh/docs/ladspa-swh.html) (`swh-plugins`)
 * Matrix Spatialiser
+* SC4
+
+#### [Linux Studio Plugins](https://lsp-plug.in/?page=manuals) (`lsp-plugins-ladspa`)
+* Gate
 
 First, we start the processing with a gate to remove unwanted low level audio. We move then to the pre-processing stage using normalize as an AGC and a low-ratio compressor to level up the audio.
 
